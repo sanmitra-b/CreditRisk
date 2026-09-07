@@ -1,0 +1,9 @@
+# Training, feature-building, notebook, and test dependencies.
+# Streamlit Community Cloud only installs the lean runtime requirements.txt.
+pyarrow>=18,<22
+lightgbm>=4.5,<5
+shap>=0.47,<0.51
+matplotlib>=3.9,<4
+seaborn>=0.13,<0.14
+PyYAML>=6,<7
+pytest>=8,<9
