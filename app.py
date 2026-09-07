@@ -82,7 +82,7 @@ def main():
         )
 
         st.markdown("---")
-        st.caption("Created by Sanmitra Bhattacharya, MSc Data Science")
+        st.caption("Created by Sanmitra Bhattacharya  \nMSc Data Science")
 
     # Main Glassmorphic Header Banner
     st.markdown(

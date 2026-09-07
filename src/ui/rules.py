@@ -144,9 +144,7 @@ def render_rules_tab():
         title="Surrogate Decision Heuristics & Governance Safeguards",
         description=(
             "This module translates the production Explainable Boosting Machine into shallow, human-auditable decision rules. "
-            "A Depth-4 surrogate decision tree ($R^2 = 0.525$, 68.0% risk band agreement) distills the complex ensemble into transparent "
-            "explanatory thresholds for model reviewers. Age-derived fields were excluded from the surrogate to reduce policy risk; "
-            "this design choice does not establish legal compliance and the production model requires separate fairness validation."
+            "A Depth-4 surrogate decision tree distills the complex ensemble into transparent explanatory thresholds for model reviewers."
         ),
         takeaways=[
             "Surrogate Fidelity: R² = 0.525",
