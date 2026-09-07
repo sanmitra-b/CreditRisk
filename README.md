@@ -8,36 +8,7 @@ A demo-ready, glass-box credit risk assessment and conversational analytics plat
 
 The **NeoStats Credit Risk Platform** demonstrates the trade-off between predictive accuracy and transparent model governance. Using the canonical Home Credit Default Risk dataset (307,511 applicants), it combines a calibrated glass-box model, applicant-level explanations, and real-time conversational analytics with SQL safety guardrails. It is a decision-support demonstration, not a validated automated lending policy or legal-compliance determination.
 
-```
-+---------------------------------------------------------------------------------------+
-|                                Streamlit App (app.py)                                 |
-|   [1. Agentic Assistant]  [2. Portfolio EDA]  [3. Risk Predictor]  [4. Explain]  [5. Rules] |
-+---------------------------------------------------------------------------------------+
-                                           |
-                                  Chatbot Interactions
-                                           v
-+---------------------------------------------------------------------------------------+
-|                        LangGraph Agentic Engine (graph.py)                            |
-|                                                                                       |
-|  [Deterministic / LLM Router]                                                         |
-|         |                                  |                           |              |
-|         v                                  v                           v              |
-|  +--------------------+             +------------------+     +------------------+     |
-|  | NL-to-SQL + Repair |             | Knowledge Search |     | DDGS Web Search  |     |
-|  |   (sqlglot safe)   |             | (pg chunks/docs) |     |  (max 5 sources) |     |
-|  +--------------------+             +------------------+     +------------------+     |
-|         |                                  |                           |              |
-|         +----------------------------------+---------------------------+              |
-|                                            v                                          |
-|                          Evidence Synthesis & Result Formatter                        |
-+---------------------------------------------------------------------------------------+
-        |                                                              |
-        v                                                              v
-+-----------------------------+                             +---------------------------+
-| Postgres Read-Only Analytics|                             | Postgres Conversation     |
-| (analytics.applicants, views|                             | Checkpoints (PostgresSaver|
-+-----------------------------+                             +---------------------------+
-```
+![Technical architecture of the Streamlit credit risk platform, including LangGraph routing, three chatbot tools, EBM model serving, and PostgreSQL analytics, knowledge retrieval, and conversation memory.](docs/images/credit-risk-platform-architecture.png)
 
 ---
 
