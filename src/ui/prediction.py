@@ -181,6 +181,7 @@ def render_prediction_tab():
                 0.95,
                 float(base["EXT_SOURCE_3"]),
                 0.01,
+                key=f"ext_3_{selected_profile}",
                 help="Normalized credit bureau score C (EXT_SOURCE_3). Single most influential predictive factor in the entire portfolio.",
             )
         with sc2:
@@ -190,6 +191,7 @@ def render_prediction_tab():
                 0.95,
                 float(base["EXT_SOURCE_2"]),
                 0.01,
+                key=f"ext_2_{selected_profile}",
                 help="Normalized credit bureau score B (EXT_SOURCE_2). Strong secondary creditworthiness indicator.",
             )
         with sc3:
@@ -199,6 +201,7 @@ def render_prediction_tab():
                 0.95,
                 float(base["EXT_SOURCE_1"]),
                 0.01,
+                key=f"ext_1_{selected_profile}",
                 help="Normalized external inquiry bureau score A (EXT_SOURCE_1).",
             )
 
@@ -214,13 +217,13 @@ def render_prediction_tab():
         # Row 2: Financial Amounts with Formatted Display
         fn1, fn2, fn3 = st.columns(3)
         with fn1:
-            credit_amt = st.number_input("Credit Amount (dataset currency units)", 10000.0, 2000000.0, float(base["AMT_CREDIT"]), 10000.0, help="Total loan principal applied for; the source dataset does not specify a display currency.")
+            credit_amt = st.number_input("Credit Amount (dataset currency units)", 10000.0, 2000000.0, float(base["AMT_CREDIT"]), 10000.0, key=f"credit_amt_{selected_profile}", help="Total loan principal applied for; the source dataset does not specify a display currency.")
             st.caption(f"Formatted: **{credit_amt:,.0f} units**")
         with fn2:
-            income_amt = st.number_input("Annual Income (dataset currency units)", 10000.0, 2000000.0, float(base["AMT_INCOME_TOTAL"]), 5000.0, help="Declared annual gross income; the source dataset does not specify a display currency.")
+            income_amt = st.number_input("Annual Income (dataset currency units)", 10000.0, 2000000.0, float(base["AMT_INCOME_TOTAL"]), 5000.0, key=f"income_amt_{selected_profile}", help="Declared annual gross income; the source dataset does not specify a display currency.")
             st.caption(f"Formatted: **{income_amt:,.0f} units**")
         with fn3:
-            annuity_amt = st.number_input("Loan Annuity (dataset currency units)", 1000.0, 200000.0, float(base["AMT_ANNUITY"]), 1000.0, help="Scheduled annual loan repayment amount; the source dataset does not specify a display currency.")
+            annuity_amt = st.number_input("Loan Annuity (dataset currency units)", 1000.0, 200000.0, float(base["AMT_ANNUITY"]), 1000.0, key=f"annuity_amt_{selected_profile}", help="Scheduled annual loan repayment amount; the source dataset does not specify a display currency.")
             st.caption(f"Formatted: **{annuity_amt:,.0f} units**")
 
         st.markdown(
@@ -235,9 +238,9 @@ def render_prediction_tab():
         # Row 3: Demographics & Behaviour with Tooltips
         ps1, ps2 = st.columns(2)
         with ps1:
-            age_val = st.slider("Applicant Age (Years)", 20, 75, int(base["AGE_YEARS"]), help="Current age of applicant in years.")
+            age_val = st.slider("Applicant Age (Years)", 20, 75, int(base["AGE_YEARS"]), key=f"age_val_{selected_profile}", help="Current age of applicant in years.")
         with ps2:
-            late_rate = st.slider("Installment Late Rate (%)", 0.0, 1.0, float(base["INST_LATE_RATE"]), 0.01, help="Historical frequency of late loan installment payments (e.g. 0.08 = 8% delinquency rate).")
+            late_rate = st.slider("Installment Late Rate (%)", 0.0, 1.0, float(base["INST_LATE_RATE"]), 0.01, key=f"late_rate_{selected_profile}", help="Historical frequency of late loan installment payments (e.g. 0.08 = 8% delinquency rate).")
 
         overrides = {
             "EXT_SOURCE_3": ext_3,

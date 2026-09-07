@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import operator
+import re
 from typing import Annotated, Any, List, Optional, TypedDict
 
 from google import genai
@@ -126,6 +127,27 @@ class CreditRiskAgent:
     def _router_node(self, state: AgentState) -> dict[str, Any]:
         query = state.get("query", "")
         normalized = query.lower()
+        prohibited_request = re.search(
+            r"\b(drop|delete|update|insert|alter|truncate|create|grant|revoke)\b",
+            normalized,
+        )
+        if prohibited_request:
+            operation = prohibited_request.group(1).upper()
+            return {
+                "route": "direct_response",
+                "route_reasoning": "Destructive or mutating request blocked before routing",
+                "sql_retry_count": 0,
+                "sql": None,
+                "sql_valid": False,
+                "sql_error": (
+                    f"Prohibited operation {operation}. The analytics assistant accepts "
+                    "read-only questions and never executes DDL or DML."
+                ),
+                "query_result": None,
+                "evidence": "",
+                "tool_used": "SQL Safety Guard",
+                "sources": [],
+            }
         follow_up_markers = (
             "previous question",
             "previous response",
@@ -234,6 +256,10 @@ class CreditRiskAgent:
         tool_used = state.get("tool_used", "Platform")
         sql_error = state.get("sql_error")
 
+        if sql_error:
+            answer = f"I cannot execute that query safely: {sql_error}"
+            return self._final_response(state, answer, tool_used)
+
         if state.get("route") == "direct_response" and not evidence:
             previous_turns = state.get("conversation", [])[-3:]
             if previous_turns:
@@ -242,10 +268,6 @@ class CreditRiskAgent:
                     for turn in previous_turns
                 )
                 tool_used = "Conversation Memory"
-
-        if sql_error:
-            answer = f"I cannot execute that query safely: {sql_error}"
-            return self._final_response(state, answer, tool_used)
 
         if self.client is not None and evidence and evidence != "No records matched the criteria.":
             try:
