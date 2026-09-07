@@ -72,7 +72,7 @@ def main():
             <div style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.8;">
                 <div style="display:flex; align-items:center; gap:8px;">{get_svg_icon("shield-halved", "#38bdf8", 14)} <span><b>Production</b>: Calibrated EBM</span></div>
                 <div style="margin-left: 22px; color:#94a3b8; font-size:0.78rem;">ROC-AUC: 0.764 | Brier: 0.068</div>
-                <div style="display:flex; align-items:center; gap:8px;">{get_svg_icon("layer-group", "#94a3b8", 14)} <span><b>Shadow</b>: LightGBM (0.778)</span></div>
+                <div style="display:flex; align-items:center; gap:8px;">{get_svg_icon("layer-group", "#94a3b8", 14)} <span><b>Best Model</b>: LightGBM (0.778)</span></div>
                 <div style="display:flex; align-items:center; gap:8px;">{get_svg_icon("compass", "#94a3b8", 14)} <span><b>Baseline</b>: Logistic (0.759)</span></div>
                 <div style="display:flex; align-items:center; gap:8px;">{get_svg_icon("database", "#10b981", 14)} <span><b>Storage</b>: PostgreSQL 17</span></div>
                 <div style="display:flex; align-items:center; gap:8px;">{get_svg_icon("robot", "#f59e0b", 14)} <span><b>Chat</b>: LangGraph + Gemini</span></div>
@@ -82,7 +82,7 @@ def main():
         )
 
         st.markdown("---")
-        st.caption("NeoStats AI Labs • Enterprise Edition")
+        st.caption("Created by Sanmitra Bhattacharya, MSc Data Science")
 
     # Main Glassmorphic Header Banner
     st.markdown(

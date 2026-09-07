@@ -157,7 +157,7 @@ div[data-testid="stTabs"] [role="tablist"],
     padding: 0 12px !important;
     border-radius: 16px !important;
     border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    gap: 6px !important;
+    gap: 14px !important;
     display: flex !important;
     width: 100% !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
@@ -179,7 +179,7 @@ div[data-testid="stTabs"] button[role="tab"],
     color: #94a3b8 !important;
     font-size: 0.91rem !important;
     font-weight: 600 !important;
-    padding: 0 18px !important;
+    padding: 0 20px !important;
     letter-spacing: 0.01em !important;
     position: relative !important;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -203,8 +203,8 @@ div[data-testid="stTabs"] button[role="tab"][aria-selected="true"]::after,
 .stTabs [aria-selected="true"]::after {
     content: "" !important;
     position: absolute !important;
-    left: 18px !important;
-    right: 18px !important;
+    left: 20px !important;
+    right: 20px !important;
     bottom: 0 !important;
     height: 3px !important;
     border-radius: 3px 3px 0 0 !important;
