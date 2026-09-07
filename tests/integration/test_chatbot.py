@@ -53,7 +53,7 @@ def test_gold_q6_why_ebm_selected(agent):
 
 def test_gold_q7_probability_of_default_general(agent):
     res = agent.ask("What is probability of default in general? Use external sources.", thread_id="test_gold")
-    assert res.get("tool_used") == "Web Search (DDGS)"
+    assert res.get("tool_used") == "DuckDuckGo Web Search"
     answer = res.get("final_answer", "").lower()
     assert "probability of default" in answer or "borrower" in answer or "likelihood" in answer
 

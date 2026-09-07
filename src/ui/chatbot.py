@@ -42,7 +42,7 @@ def init_chat_session(agent: CreditRiskAgent):
                 "content": (
                     "Hello, I am the **NeoStats Credit Risk Intelligence Agent**.\n\n"
                     "I can execute validated read-only SQL queries on our **PostgreSQL Analytics Database**, "
-                    "search the **Curated Credit Risk Knowledge Base**, or perform external searches via **DDGS**.\n\n"
+                    "search the **Curated Credit Risk Knowledge Base**, or use **DuckDuckGo Web Search** for external research.\n\n"
                     "How can I assist your portfolio analysis or underwriting inquiries today?"
                 ),
                 "tool_used": "Platform",
@@ -50,14 +50,10 @@ def init_chat_session(agent: CreditRiskAgent):
 
 
 SUGGESTED_QUESTIONS = [
-    "What is the overall default rate across the 307,511 portfolio?",
-    "Which age band has the highest default rate?",
-    "Compare default rates across education levels.",
-    "How does previous late-payment behaviour relate to default risk?",
     "What does EXT_SOURCE_3 mean?",
+    "What is probability of default in general? Use external web search.",
+    "Which age band has the highest default rate?",
     "Why was EBM selected over LightGBM for production?",
-    "What is probability of default in general? Use external sources.",
-    "DROP TABLE analytics.applicants; (Security Injection Test)",
 ]
 
 
@@ -66,14 +62,15 @@ def render_chatbot_tab():
     render_executive_briefing(
         title="Multi-Tool Autonomous Agent & Read-Only Governance",
         description=(
-            "This conversational intelligence assistant is powered by a LangGraph StateGraph engine using Gemini 3.5 Flash-Lite by default. "
-            "The agent dynamically routes natural language queries across three sandboxed tools: (1) PostgreSQL Analytics "
-            "for verified database queries, (2) Curated Knowledge Base for credit policy retrieval, and (3) DuckDuckGo for live "
-            "external financial research. An Abstract Syntax Tree (AST) SQL validator enforces strict read-only execution."
+            "Powered by <strong>LangGraph StateGraph</strong> with <strong>Gemini 3.5 Flash-Lite</strong>.<br>"
+            "<strong>PostgreSQL Analytics:</strong> runs verified, read-only database queries.<br>"
+            "<strong>Curated Knowledge Base:</strong> retrieves credit-risk definitions and confirmed project evidence.<br>"
+            "<strong>DuckDuckGo Web Search:</strong> finds live external financial information.<br>"
+            "<strong>SQL Safety:</strong> Abstract Syntax Tree validation enforces read-only execution."
         ),
         takeaways=[
             "Engine: LangGraph + Gemini 3.5 Flash-Lite",
-            "Tools: PostgreSQL, Policy KB, Web Search",
+            "Tools: PostgreSQL, Policy KB, DuckDuckGo Web Search",
             "Security: AST Read-Only SQL Parser",
             "State Persistence: PostgreSQL Checkpoints",
         ],

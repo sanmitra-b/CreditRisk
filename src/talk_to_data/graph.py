@@ -246,7 +246,7 @@ class CreditRiskAgent:
         sources = [r["url"] for r in web_res.results if "url" in r]
         return {
             "evidence": web_res.formatted_evidence,
-            "tool_used": "Web Search (DDGS)",
+            "tool_used": "DuckDuckGo Web Search",
             "sources": sources,
         }
 

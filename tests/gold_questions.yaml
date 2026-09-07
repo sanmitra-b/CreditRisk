@@ -37,7 +37,7 @@ questions:
 
   - id: 7
     question: "What is probability of default in general? Use external sources."
-    expected_tool: "Web Search (DDGS)"
+    expected_tool: "DuckDuckGo Web Search"
     expected_keywords: ["probability of default", "borrower", "credit"]
     description: "External web search fallback"
 

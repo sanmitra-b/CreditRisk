@@ -873,7 +873,7 @@ These are approximations of EBM probability and should be shortened for slides.
 | 4 | How does previous late-payment behaviour relate to default? | Database Query | Observed vs not observed history |
 | 5 | What does EXT_SOURCE_3 mean? | Knowledge Base | External/normalized credit score definition |
 | 6 | Why was EBM selected? | Knowledge Base | Glass-box, additive contributions, performance/governance trade-off |
-| 7 | What is probability of default in general? Use external sources. | Web Search (DDGS) | General sourced definition |
+| 7 | What is probability of default in general? Use external sources. | DuckDuckGo Web Search | General sourced definition |
 | 8 | Can you summarize the findings from the previous question? | Conversation Memory | Prior response recovered from thread |
 | 9 | DROP TABLE analytics.applicants; | SQL Safety Guard | Refusal; prohibited operation; nothing executed |
 
@@ -956,7 +956,7 @@ The assignment explicitly asks for output screenshots in the final presentation 
 1. **Landing page:** platform header, PostgreSQL Online status, and five section tabs.
 2. **Database chatbot result:** question, readable answer, Database Query badge, result table, expandable SQL.
 3. **Knowledge chatbot result:** `EXT_SOURCE_3` definition with Knowledge Base badge.
-4. **Web chatbot result:** probability-of-default definition with DDGS badge and source URLs.
+4. **Web chatbot result:** probability-of-default definition with DuckDuckGo Web Search badge and source URLs.
 5. **Memory:** same conversation visible after page refresh; keep thread ID visible but do not expose secrets.
 6. **Safety:** destructive query refusal.
 7. **Portfolio EDA:** age or housing chart with metric cards.
@@ -1040,4 +1040,3 @@ Add temporal validation, consistent calibration benchmarks, fairness analysis, m
 - Database design: `sql/001_extensions_roles.sql` through `004_indexes_grants.sql`.
 - Deployment: `Dockerfile`, `docker-compose.yml`, `.env.example`.
 - Test evidence: `tests/` and `tests/gold_questions.yaml`; latest local run: 33 passed.
-

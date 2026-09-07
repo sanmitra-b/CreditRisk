@@ -142,7 +142,7 @@ section[data-testid="stSidebar"] hr {
 }
 
 /* -------------------------------------------------------------
-   PILL-SHAPED FLOATING TABS (GLASSMORPHISM & BREATHING ROOM)
+   NAVIGATION TABS (SUBTLE ACTIVE UNDERLINE)
 ------------------------------------------------------------- */
 div[data-testid="stTabs"] {
     margin-top: 10px !important;
@@ -154,12 +154,13 @@ div[data-testid="stTabs"] [role="tablist"],
     background: rgba(15, 23, 42, 0.8) !important;
     backdrop-filter: blur(24px) !important;
     -webkit-backdrop-filter: blur(24px) !important;
-    padding: 8px 12px !important;
-    border-radius: 9999px !important;
+    padding: 0 12px !important;
+    border-radius: 16px !important;
     border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    gap: 12px !important;
-    display: inline-flex !important;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+    gap: 6px !important;
+    display: flex !important;
+    width: 100% !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
 div[data-testid="stTabs"] [data-baseweb="tab-border"],
@@ -171,32 +172,44 @@ div[data-testid="stTabs"] [data-baseweb="tab-highlight"],
 
 div[data-testid="stTabs"] button[role="tab"],
 .stTabs [data-baseweb="tab"] {
-    height: 44px !important;
+    height: 54px !important;
     background: transparent !important;
     border: none !important;
-    border-radius: 9999px !important;
+    border-radius: 0 !important;
     color: #94a3b8 !important;
-    font-size: 0.94rem !important;
-    font-weight: 700 !important;
-    padding: 0 24px !important;
+    font-size: 0.91rem !important;
+    font-weight: 600 !important;
+    padding: 0 18px !important;
     letter-spacing: 0.01em !important;
+    position: relative !important;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 div[data-testid="stTabs"] button[role="tab"]:hover,
 .stTabs [data-baseweb="tab"]:hover {
     color: #f8fafc !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    transform: translateY(-1px) !important;
+    background: rgba(255, 255, 255, 0.035) !important;
 }
 
 div[data-testid="stTabs"] button[role="tab"][aria-selected="true"],
 .stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, rgba(56, 189, 248, 0.28) 0%, rgba(139, 92, 246, 0.28) 100%) !important;
-    border: 1px solid rgba(56, 189, 248, 0.65) !important;
-    color: #38bdf8 !important;
-    box-shadow: 0 0 22px rgba(56, 189, 248, 0.35), inset 0 0 12px rgba(56, 189, 248, 0.15) !important;
-    transform: translateY(-1px) !important;
+    background: transparent !important;
+    border: none !important;
+    color: #f8fafc !important;
+    box-shadow: none !important;
+}
+
+div[data-testid="stTabs"] button[role="tab"][aria-selected="true"]::after,
+.stTabs [aria-selected="true"]::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 18px !important;
+    right: 18px !important;
+    bottom: 0 !important;
+    height: 3px !important;
+    border-radius: 3px 3px 0 0 !important;
+    background: linear-gradient(90deg, #38bdf8, #22d3ee) !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.55) !important;
 }
 
 /* -------------------------------------------------------------

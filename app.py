@@ -98,8 +98,8 @@ def main():
                 </div>
             </div>
             <div style="display: flex; gap: 12px; align-items: center;">
-                <span class="badge badge-low" style="display:inline-flex; align-items:center; gap:6px; padding: 7px 16px;">{get_svg_icon("shield-halved", "#34d399", 14)} EBM CALIBRATED</span>
-                <span class="badge" style="display:inline-flex; align-items:center; gap:6px; padding: 7px 16px; background: rgba(56, 189, 248, 0.14); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); box-shadow: 0 0 14px rgba(56, 189, 248, 0.2);">{get_svg_icon("database", "#38bdf8", 14)} POSTGRES 17</span>
+                <span class="badge badge-low" style="display:inline-flex; align-items:center; gap:6px; padding: 7px 16px;">{get_svg_icon("shield-halved", "#34d399", 14)} Model: EBM (Explainable Boosting Machine)</span>
+                <span class="badge" style="display:inline-flex; align-items:center; gap:6px; padding: 7px 16px; background: rgba(56, 189, 248, 0.14); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); box-shadow: 0 0 14px rgba(56, 189, 248, 0.2);">{get_svg_icon("database", "#38bdf8", 14)} DB: PostgreSQL served from Supabase</span>
             </div>
         </div>
         """,
