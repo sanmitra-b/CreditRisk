@@ -1,0 +1,39 @@
+{
+  "validation_r2": 0.52510145642138,
+  "risk_band_agreement": 0.6795586099247729,
+  "features": [
+    "CREDIT_TERM",
+    "EXT_SOURCE_3",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "DAYS_ID_PUBLISH",
+    "DAYS_REGISTRATION",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_ANNUITY",
+    "ANNUITY_INCOME_RATIO",
+    "PAID_AMOUNT",
+    "CREDIT_GOODS_RATIO",
+    "INST_LATE_RATE",
+    "AMT_GOODS_PRICE",
+    "REGION_POPULATION_RELATIVE",
+    "EMPLOYED_AGE_RATIO",
+    "SCHEDULED_AMOUNT",
+    "CREDIT_INCOME_RATIO",
+    "AMT_CREDIT",
+    "INSTALLMENT_ROWS",
+    "INST_PAYMENT_RATIO",
+    "ACTIVE_CREDIT_COUNT",
+    "DAYS_EMPLOYED_CLEAN",
+    "AMT_INCOME_TOTAL",
+    "PREV_REFUSAL_RATE",
+    "PRIOR_CREDIT_COUNT",
+    "OWN_CAR_AGE",
+    "DAYS_EMPLOYED"
+  ],
+  "excluded_policy_sensitive_features": [
+    "AGE_YEARS",
+    "DAYS_BIRTH"
+  ],
+  "rules": "|--- EXT_SOURCE_3 <= 0.3163\n|   |--- EXT_SOURCE_2 <= 0.4172\n|   |   |--- EXT_SOURCE_2 <= 0.2246\n|   |   |   |--- value: [0.2873]\n|   |   |--- EXT_SOURCE_2 >  0.2246\n|   |   |   |--- value: [0.2116]\n|   |--- EXT_SOURCE_2 >  0.4172\n|   |   |--- EXT_SOURCE_1 <= 0.5312\n|   |   |   |--- EXT_SOURCE_3 <= 0.1825\n|   |   |   |   |--- value: [0.1900]\n|   |   |   |--- EXT_SOURCE_3 >  0.1825\n|   |   |   |   |--- value: [0.1247]\n|   |   |--- EXT_SOURCE_1 >  0.5312\n|   |   |   |--- value: [0.0735]\n|--- EXT_SOURCE_3 >  0.3163\n|   |--- EXT_SOURCE_2 <= 0.3992\n|   |   |--- EXT_SOURCE_3 <= 0.5451\n|   |   |   |--- EXT_SOURCE_2 <= 0.1856\n|   |   |   |   |--- value: [0.1928]\n|   |   |   |--- EXT_SOURCE_2 >  0.1856\n|   |   |   |   |--- value: [0.1243]\n|   |   |--- EXT_SOURCE_3 >  0.5451\n|   |   |   |--- INST_LATE_RATE <= 0.0754\n|   |   |   |   |--- value: [0.0609]\n|   |   |   |--- INST_LATE_RATE >  0.0754\n|   |   |   |   |--- value: [0.1019]\n|   |--- EXT_SOURCE_2 >  0.3992\n|   |   |--- EXT_SOURCE_3 <= 0.5362\n|   |   |   |--- EXT_SOURCE_2 <= 0.6156\n|   |   |   |   |--- value: [0.0815]\n|   |   |   |--- EXT_SOURCE_2 >  0.6156\n|   |   |   |   |--- value: [0.0472]\n|   |   |--- EXT_SOURCE_3 >  0.5362\n|   |   |   |--- EXT_SOURCE_2 <= 0.6178\n|   |   |   |   |--- value: [0.0400]\n|   |   |   |--- EXT_SOURCE_2 >  0.6178\n|   |   |   |   |--- value: [0.0244]\n",
+  "disclaimer": "Rules approximate EBM scores for explanation only and are not approval policy."
+}

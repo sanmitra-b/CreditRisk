@@ -1,0 +1,170 @@
+[
+  {
+    "risk_band": "Low",
+    "estimated_probability": 0.04823554920240514,
+    "top_contributions": [
+      {
+        "term": "EXT_SOURCE_3",
+        "value": 0.190705947811054,
+        "score": 0.6294137462387948
+      },
+      {
+        "term": "EXT_SOURCE_2",
+        "value": 0.6864012506961757,
+        "score": -0.47501596968279713
+      },
+      {
+        "term": "OWN_CAR_AGE",
+        "value": 3.0,
+        "score": -0.3378212945114174
+      },
+      {
+        "term": "AMT_GOODS_PRICE",
+        "value": 1966500.0,
+        "score": -0.28754850447931424
+      },
+      {
+        "term": "CREDIT_TERM",
+        "value": 0.02865931980135647,
+        "score": 0.2355561129359507
+      },
+      {
+        "term": "AMT_ANNUITY",
+        "value": 63054.0,
+        "score": 0.14921381442150058
+      },
+      {
+        "term": "ACTIVE_CREDIT_COUNT",
+        "value": 1.0,
+        "score": -0.11684154019181231
+      },
+      {
+        "term": "AMT_CREDIT",
+        "value": 2200122.0,
+        "score": 0.10881801198395713
+      },
+      {
+        "term": "DAYS_ID_PUBLISH",
+        "value": -4392.0,
+        "score": -0.10673136075160783
+      },
+      {
+        "term": "ORGANIZATION_TYPE",
+        "value": "Business Entity Type 1",
+        "score": -0.09099078473013425
+      }
+    ]
+  },
+  {
+    "risk_band": "Medium",
+    "estimated_probability": 0.12805697985387163,
+    "top_contributions": [
+      {
+        "term": "EXT_SOURCE_2",
+        "value": 0.2579783333843537,
+        "score": 0.3267512926160745
+      },
+      {
+        "term": "DAYS_ID_PUBLISH",
+        "value": -4813.0,
+        "score": -0.18041312665342124
+      },
+      {
+        "term": "AMT_GOODS_PRICE",
+        "value": 360000.0,
+        "score": 0.17476641042548183
+      },
+      {
+        "term": "INST_LATE_RATE",
+        "value": 0.10344827586206896,
+        "score": 0.12134593017984849
+      },
+      {
+        "term": "PRIOR_CREDIT_COUNT",
+        "value": 4.0,
+        "score": 0.11069997250425398
+      },
+      {
+        "term": "ORGANIZATION_TYPE",
+        "value": "XNA",
+        "score": -0.11030940255808844
+      },
+      {
+        "term": "AMT_ANNUITY",
+        "value": 32679.0,
+        "score": 0.10876650996348329
+      },
+      {
+        "term": "CREDIT_GOODS_RATIO",
+        "value": 1.1683,
+        "score": 0.0892613973521631
+      },
+      {
+        "term": "EXT_SOURCE_1",
+        "value": 0.5052886501830977,
+        "score": 0.08319865918576633
+      },
+      {
+        "term": "ANNUITY_INCOME_RATIO",
+        "value": 0.3631,
+        "score": 0.08096098801135156
+      }
+    ]
+  },
+  {
+    "risk_band": "High",
+    "estimated_probability": 0.3392956918214922,
+    "top_contributions": [
+      {
+        "term": "EXT_SOURCE_2",
+        "value": 0.1234853599304235,
+        "score": 0.6735921549681154
+      },
+      {
+        "term": "CREDIT_TERM",
+        "value": 0.0489782527184102,
+        "score": 0.3359688573578522
+      },
+      {
+        "term": "CREDIT_GOODS_RATIO",
+        "value": 1.4224,
+        "score": 0.3088275513823608
+      },
+      {
+        "term": "INST_LATE_RATE",
+        "value": 0.16216216216216217,
+        "score": 0.17096835362025706
+      },
+      {
+        "term": "AMT_GOODS_PRICE",
+        "value": 270000.0,
+        "score": 0.13739725594295615
+      },
+      {
+        "term": "PRIOR_CREDIT_COUNT",
+        "value": 4.0,
+        "score": 0.11069997250425398
+      },
+      {
+        "term": "INST_PAYMENT_RATIO",
+        "value": 0.8375962972640991,
+        "score": 0.10698591430720764
+      },
+      {
+        "term": "EXT_SOURCE_1",
+        "value": 0.5052886501830977,
+        "score": 0.08319865918576633
+      },
+      {
+        "term": "PAID_AMOUNT",
+        "value": 237250.796875,
+        "score": -0.0747530911138922
+      },
+      {
+        "term": "PREV_REFUSAL_RATE",
+        "value": 0.0,
+        "score": -0.07117698424913543
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "logistic_regression": {
+    "roc_auc": 0.7589445949209206,
+    "pr_auc": 0.23782460966704438,
+    "brier_score": 0.19946238680302314,
+    "training_seconds": 16.768547400000898
+  },
+  "lightgbm_shadow": {
+    "roc_auc": 0.7783165776249594,
+    "pr_auc": 0.2651997667595672,
+    "brier_score": 0.1740637495772442,
+    "training_seconds": 23.398578199999974
+  },
+  "ebm": {
+    "roc_auc": 0.7643143789377325,
+    "pr_auc": 0.25034793756846907,
+    "brier_score": 0.06754475348276137,
+    "training_rows": 120000,
+    "risk_bands_monotonic": true
+  }
+}

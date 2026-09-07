@@ -1,0 +1,21 @@
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE SCHEMA IF NOT EXISTS raw;
+CREATE SCHEMA IF NOT EXISTS analytics;
+CREATE SCHEMA IF NOT EXISTS platform;
+
+DO $block$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'analytics_ro') THEN
+        CREATE ROLE analytics_ro NOLOGIN;
+    END IF;
+END
+$block$;
+
+REVOKE ALL ON SCHEMA raw FROM PUBLIC;
+REVOKE ALL ON SCHEMA analytics FROM PUBLIC;
+REVOKE ALL ON SCHEMA platform FROM PUBLIC;
+
+GRANT USAGE ON SCHEMA analytics TO analytics_ro;
+GRANT USAGE ON SCHEMA platform TO analytics_ro;
+

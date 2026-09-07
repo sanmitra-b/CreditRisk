@@ -1,0 +1,29 @@
+# Data and secrets
+data/*
+!data/.gitkeep
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environments and IDE files
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Runtime files
+logs/
+tmp/
+*.log
+
+# Generated scratch artifacts
+artifacts/**/*.tmp
+
+# Applicant-grain feature data stays local; Streamlit reads analytics from Supabase
+artifacts/applicant_features.parquet
