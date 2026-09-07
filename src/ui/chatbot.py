@@ -8,6 +8,16 @@ from src.talk_to_data.graph import CreditRiskAgent, create_persistent_agent
 from src.ui.styles import get_svg_icon, render_executive_briefing
 
 
+def _user_facing_tool_name(value: str) -> str:
+    if value == "Web Search (DDGS)":
+        return "DuckDuckGo Web Search"
+    return value
+
+
+def _user_facing_message(value: str) -> str:
+    return value.replace("**DDGS**", "**DuckDuckGo Web Search**")
+
+
 @st.cache_resource
 def load_agent() -> CreditRiskAgent:
     return create_persistent_agent()
@@ -29,8 +39,8 @@ def init_chat_session(agent: CreditRiskAgent):
             result = turn.get("query_result") or {}
             st.session_state["messages"].append({
                 "role": "assistant",
-                "content": turn.get("answer", ""),
-                "tool_used": turn.get("tool_used", "Platform"),
+                "content": _user_facing_message(turn.get("answer", "")),
+                "tool_used": _user_facing_tool_name(turn.get("tool_used", "Platform")),
                 "sql": turn.get("sql"),
                 "query_meta": result,
                 "data_preview": result.get("preview"),
@@ -115,7 +125,7 @@ def render_chatbot_tab():
         for msg in st.session_state["messages"]:
             with st.chat_message(msg["role"]):
                 if msg.get("tool_used") and msg["role"] == "assistant":
-                    tool_name = msg["tool_used"]
+                    tool_name = _user_facing_tool_name(msg["tool_used"])
                     if "Database" in tool_name:
                         icon_svg = get_svg_icon("database", "#38bdf8", 13, "margin-right:5px;")
                     elif "Knowledge" in tool_name:
@@ -129,7 +139,7 @@ def render_chatbot_tab():
                         unsafe_allow_html=True,
                     )
 
-                st.markdown(msg["content"])
+                st.markdown(_user_facing_message(msg["content"]))
 
                 # Expandable details if SQL query was run
                 if msg.get("sql"):
